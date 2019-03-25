@@ -26,7 +26,7 @@
         throw new Error('getRealPath arguments is undefined.')
       }
       if (/MSIE\s+\d{1}\./i.test(UA)) {
-        // IE7-9
+        // IE5-9
         fileElement.select()
         window.parent.document.body.focus()
         realPath = document.selection.createRange().text
@@ -48,8 +48,8 @@
     function previewImage(imgElement, imgPath) {
       var UA = window.navigator.userAgent
       if (/MSIE\s+\d{1}\./i.test(UA)) {
-        // IE7-9
-        imgElement.style.filter = 'progid:DXImageTransform.Microsoft.AlphaImageLoader (src='+ imgPath +')'
+        // IE5-9
+        imgElement.style.filter = 'progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='+ imgPath +')'
       } else {
         // other
         imgElement.style.backgroundImage = 'url('+ imgPath +')'
