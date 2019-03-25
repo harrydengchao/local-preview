@@ -26,7 +26,7 @@
         throw new Error('getRealPath arguments is undefined.')
       }
       if (/MSIE\s+\d{1}\./i.test(UA)) {
-        // IE
+        // IE7-9
         fileElement.select()
         window.parent.document.body.focus()
         realPath = document.selection.createRange().text
