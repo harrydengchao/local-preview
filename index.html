@@ -48,8 +48,10 @@
     function previewImage(imgElement, imgPath) {
       var UA = window.navigator.userAgent
       if (/MSIE\s+\d{1}\./i.test(UA)) {
+        // IE7-9
         imgElement.style.filter = 'progid:DXImageTransform.Microsoft.AlphaImageLoader (src='+ imgPath +')'
       } else {
+        // other
         imgElement.style.backgroundImage = 'url('+ imgPath +')'
       }
     }
